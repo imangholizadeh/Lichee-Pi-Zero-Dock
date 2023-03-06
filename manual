@@ -116,11 +116,15 @@ sudo dd if=~/yocto/tmp/deploy/images/licheepizero/qt5-image-licheepizero.sunxi-s
 Zero Dock verison
 sudo dd if=~/yocto/tmp/deploy/images/licheepizero-dock/qt5-image-licheepizero-dock.sunxi-sdimg of=/dev/sde bs=1024
 
-To get ip address of board you must :
+
+********************************************************************************************************************************
+********************************************************************************************************************************
+9. To get ip address of board you must :
 first: go to serial debug port and type:
 ifconfig 
 
-To test the program written and built in QT software, it (eg. Standby) should be in the folder 
+****************************************************************
+10. To test the program written and built in QT software, it (eg. Standby) should be in the folder 
 /home/root/
 for transfer this program to Lichee Pi Zero Dock Version board you can use 
 SSH @root(ip address of board eg. 192.168.1.1)
@@ -130,6 +134,7 @@ and then run the following commands.
 chmod 777 Standby
 ./ Standby
 
+********************************
 Limitation
 rootfs-resize not working (SD CARD size can be resized manualy)
 no wiringpi or similar library to control GPIO in C code
