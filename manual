@@ -4,6 +4,7 @@ How to compile Linux with Qt5 option using Yocto for LICHEE PI ZERO
 •	Post category:Blog / Linux
 •	Post comments:0 Comments
 •	Post Source link: https://www.emsyslabs.com/how-to-compile-linux-with-qt5-option-using-yocto-for-lichee-pi-zero/
+********************************************************************************************************************************
 Instruction how to build an image for Lichee Pi Zero and Lichee Pi Zero Dock in Yocto
 Products: Lichee Pi Zero Version & Lichee Pi Zero Dock Version
 General Note: Assumed that Linux Ubuntu is installed
@@ -19,11 +20,12 @@ List of not tested elements
 Bluetooth – appears during system boot up
 Microphone
 Headphone
-
+********************************************************************************************************************************
 How to build images
 1.	First, make sure to following packages are installed in the system
 sudo apt-get install gawk wget diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm libgmp3-dev libmpc-dev
 Note: More information can be found on the Yocto reference manual.
+********************************************************************************************************************************
 2. Download necessary Yocto packaged listed below. Be sure to be in the root of the home folder.
 mkdir yocto
 cd yocto
@@ -41,12 +43,13 @@ sudo apt-get install tor
 then
 torify git clone git://git.openembedded.org/meta-openembedded --depth 1 -b dunfell
 
-
+********************************************************************************************************************************
 3. Select directory to build Linux
 Zero version
 source oe-init-build-env ~/yocto/build/licheepizero
 Zero Dock version
 source oe-init-build-env ~/yocto/build/licheepizero-dock
+********************************************************************************************************************************
 4. Modify bblayers.conf(located in ~/yocto/build/licheepizero/conf(or licheepizero-dock/conf))
 BBLAYERS ?= " \
 ${HOME}/yocto/poky/meta \
@@ -58,6 +61,7 @@ ${HOME}/yocto/poky/meta-qt5 \
 ${HOME}/yocto/poky/meta-licheepizero \
 "
 Note: Please adapt PATH of conf/bblayers.conf if necessary.
+********************************************************************************************************************************
 5. Modify or align following elements in local.conf(located in ~/yocto/build/licheepizero/conf(or licheepizero-dock/conf)) file
 MACHINE ??= "licheepizero-dock"
 or
@@ -85,7 +89,7 @@ IMAGE_INSTALL_append = " qtdeclarative qtdeclarative-plugins qtdeclarative-qmlpl
 MACHINE_EXTRA_RRECOMMENDS = " kernel-modules"
 
 Example of this file exist  in repository  (local.conf)
-
+********************************************************************************************************************************
 6. Build objects
 Issue from console one of the following option
 console image
@@ -101,12 +105,13 @@ qt5 toolchain sdk
 bitbake meta-toolchain-qt5
 
 This step takes one day!
-
+********************************************************************************************************************************
 7. After compilation images appear in
 Zero version
 ~/yocto/tmp/deploy/images/licheepizero
 Zero Dock version
 ~/yocto/tmp/deploy/images/licheepizero-dock
+********************************************************************************************************************************
 8. Insert SD CARD into dedicated CARD slot and issue the following command to write an image
 Note:
 Be 100% sure to provide a valid device name (of=/dev/sde). Wrong name “/dev/sde” damage Your system file !
@@ -116,12 +121,12 @@ sudo dd if=~/yocto/tmp/deploy/images/licheepizero/qt5-image-licheepizero.sunxi-s
 Zero Dock verison
 sudo dd if=~/yocto/tmp/deploy/images/licheepizero-dock/qt5-image-licheepizero-dock.sunxi-sdimg of=/dev/sde bs=1024
 
-
+********************************************************************************************************************************
 9. To get ip address of board you must :
 first: go to serial debug port and type:
 ifconfig 
 
-
+********************************************************************************************************************************
 10. To test the program written and built in QT software, it (eg. Standby) should be in the folder 
 /home/root/
 for transfer this program to Lichee Pi Zero Dock Version board you can use 
