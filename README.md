@@ -10,5 +10,7 @@ Lichee Pi Zero Dock Version
 
 Source link: https://www.emsyslabs.com/how-to-compile-linux-with-qt5-option-using-yocto-for-lichee-pi-zero/
 
+this is a sample project (standby instrument system)
+![image](https://user-images.githubusercontent.com/45817368/223098659-c553164d-cd4a-4e8f-8894-2d49c1cda13f.png)
 
 
