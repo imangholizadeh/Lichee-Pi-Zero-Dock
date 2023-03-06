@@ -5,12 +5,10 @@ How to compile Linux with Qt5 option using Yocto for LICHEE PI ZERO
 •	Post comments:0 Comments
 •	Post Source link: https://www.emsyslabs.com/how-to-compile-linux-with-qt5-option-using-yocto-for-lichee-pi-zero/
 Instruction how to build an image for Lichee Pi Zero and Lichee Pi Zero Dock in Yocto
-Products:
-Lichee Pi Zero Version & Lichee Pi Zero Dock Version
- 
-General Note:
-Assumed that Linux Ubuntu is installed
-List of tested elements
+Products: Lichee Pi Zero Version & Lichee Pi Zero Dock Version
+General Note: Assumed that Linux Ubuntu is installed
+
+List of tested elements:
 WiFi
 Ethernet
 Lcd
