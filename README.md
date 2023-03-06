@@ -134,7 +134,6 @@ Zero Dock verison
 sudo dd if=~/yocto/tmp/deploy/images/licheepizero-dock/qt5-image-licheepizero-dock.sunxi-sdimg of=/dev/sde bs=1024
 
 
-
 Limitation
 rootfs-resize not working (SD CARD size can be resized manualy)
 no wiringpi or similar library to control GPIO in C code
